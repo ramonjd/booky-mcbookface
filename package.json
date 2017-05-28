@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "image-downloader": "^3.2.1",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-rc.1",
+    "request": "^2.81.0",
+    "tesseract.js": "^1.0.10",
+    "urlencode": "^1.1.0"
+  },
+  "name": "booky-mcbookface",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "standard": "^10.0.2"
+  },
+  "scripts": {
+    "watch": "nodemon src/server.js -e js,pug",
+    "start": "node server.js",
+    "test": "standard"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

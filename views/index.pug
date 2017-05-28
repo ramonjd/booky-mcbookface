@@ -1,0 +1,54 @@
+html
+    head
+        title= title
+        style(type='text/css').
+          label {
+            display:block;
+          }
+          input {
+            width: 300px;
+            height: 30px;
+          }
+          button {
+            height: 30px;
+            padding: 0 10px;
+          }
+          article {
+            display:flex;
+          }
+          textarea {
+            width: 300px;
+            height: 400px;
+          }
+          img {
+            flex: 1;
+            width: 50%;
+          }
+
+    body
+      section
+        head
+          h1= title
+        main  
+          form(action='/', method='post')
+            label(for='path') Absolute path to local image
+            input(type='text', name='path', id='path', placeholder='/Home/your/machine/content.png')
+            button(type='submit') Get 
+          article#result
+            textarea= result
+            figure
+              img
+        footer
+        script(type='text/javascript').
+          function onSubmit(e) {
+            if (!document.querySelector('input').value) {
+              e.preventDefault();
+              return false;
+            }
+          }
+          document.querySelector('form').addEventListener('submit', onSubmit, false);
+          let imgSrc = '#{path}';
+            if (imgSrc) {
+              imgSrc = imgSrc.split('/');
+              document.querySelector('img').src = '/' + imgSrc.pop();
+            }
