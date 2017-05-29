@@ -17,7 +17,7 @@
   },
   "scripts": {
     "watch": "nodemon src/server.js -e js,pug",
-    "start": "node server.js",
+    "start": "node src/server.js",
     "test": "standard"
   },
   "author": "",
